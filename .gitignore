@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+
+# Visual Studio Code
+.vscode/
+
+# Logs
+*.log
+
+# SQLite
+*.db
+
+# Workspace
+workspace/
+
+# Environment variables
+.env
