@@ -1,0 +1,33 @@
+[project]
+name = "openai-agent-python-sdk"
+version = "0.1.0"
+description = "Developer assistant built with OpenAI Agents SDK."
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "openai-agents",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.setuptools.packages.find]
+include = ["assistant*"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "B",
+    "UP",
+    "PL",
+]
