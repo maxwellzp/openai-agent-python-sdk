@@ -1,9 +1,10 @@
-from agents import function_tool
 import os
 import subprocess
 import tempfile
-from assistant.config import WORKSPACE
-from assistant.config import PYTHON_TIMEOUT
+
+from agents import function_tool
+
+from assistant.config import PYTHON_TIMEOUT, WORKSPACE
 
 
 def run_python(script: str) -> str:
@@ -27,6 +28,7 @@ def run_python(script: str) -> str:
             capture_output=True,
             text=True,
             timeout=PYTHON_TIMEOUT,
+            check=False,
         )
 
         output = ""
