@@ -2,7 +2,6 @@ from agents import function_tool
 import platform
 
 
-@function_tool
 def get_os_info() -> str:
     """Returns system info including os, version, release, machine, version of python"""
     return {
@@ -15,5 +14,5 @@ def get_os_info() -> str:
 
 
 TOOLS = [
-    get_os_info,
+    function_tool(get_os_info),
 ]

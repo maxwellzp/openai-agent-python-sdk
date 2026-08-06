@@ -2,7 +2,6 @@ from agents import function_tool
 from pathlib import Path
 
 
-@function_tool
 def list_directory(path: str) -> str:
     """Return names of files and directories."""
     try:
@@ -11,7 +10,6 @@ def list_directory(path: str) -> str:
         return f"Error during reading a file or a directory."
 
 
-@function_tool
 def read_file(path: str) -> str:
     """Read a UTF-8 text file."""
     try:
@@ -20,7 +18,6 @@ def read_file(path: str) -> str:
         return f"Error during reading a file: {e}"
 
 
-@function_tool
 def search_text(path: str, query: str) -> list[str]:
     """Search for a text in a text file."""
     results = []
@@ -38,7 +35,6 @@ def search_text(path: str, query: str) -> list[str]:
     return results
 
 
-@function_tool
 def write_file(path: str, text: str) -> str:
     """Write a text string to a text file."""
     try:
@@ -49,7 +45,7 @@ def write_file(path: str, text: str) -> str:
 
 
 TOOLS = [
-    read_file,
-    write_file,
-    search_text,
+    function_tool(read_file),
+    function_tool(write_file),
+    function_tool(search_text),
 ]

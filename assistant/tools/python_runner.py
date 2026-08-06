@@ -6,7 +6,6 @@ from assistant.config import WORKSPACE
 from assistant.config import PYTHON_TIMEOUT
 
 
-@function_tool
 def run_python(script: str) -> str:
     """
     Execute a Python script and return stdout/stderr.
@@ -46,5 +45,5 @@ def run_python(script: str) -> str:
 
 
 TOOLS = [
-    run_python,
+    function_tool(run_python),
 ]
