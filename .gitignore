@@ -20,3 +20,6 @@ workspace/
 
 # Environment variables
 .env
+
+# File to keep an important command
+terminal.txt
