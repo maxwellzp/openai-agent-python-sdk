@@ -1,13 +1,14 @@
-from agents import function_tool
 from pathlib import Path
+
+from agents import function_tool
 
 
 def list_directory(path: str) -> str:
     """Return names of files and directories."""
     try:
         return sorted([p.name for p in Path(path).iterdir()])
-    except Exception as e:
-        return f"Error during reading a file or a directory."
+    except Exception:
+        return "Error during reading a file or a directory."
 
 
 def read_file(path: str) -> str:
