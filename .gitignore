@@ -23,3 +23,12 @@ workspace/
 
 # File to keep an important command
 terminal.txt
+
+# Test cache
+.pytest_cache/
+
+# Ruff cache
+.ruff_cache/
+
+# Build metadata
+*.egg-info/
