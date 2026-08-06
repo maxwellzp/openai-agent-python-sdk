@@ -1,9 +1,9 @@
 import asyncio
 
 from agents import Agent, Runner
-from openai.types.responses import ResponseTextDeltaEvent
 
 from assistant.prompts import SYSTEM_PROMPT
+from assistant.streaming import handle_stream_event
 from assistant.tools import load_tools
 
 agent = Agent(
@@ -26,10 +26,7 @@ async def main() -> None:
         )
 
         async for event in stream.stream_events():
-            if event.type == "raw_response_event" and isinstance(
-                event.data, ResponseTextDeltaEvent
-            ):
-                print(event.data.delta, end="", flush=True)
+            handle_stream_event(event)
 
         print()
 
