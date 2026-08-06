@@ -1,5 +1,6 @@
-from agents import function_tool
 import platform
+
+from agents import function_tool
 
 
 def get_os_info() -> str:
