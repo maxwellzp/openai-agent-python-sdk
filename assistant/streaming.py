@@ -1,6 +1,8 @@
 from agents.items import ToolCallItem, ToolCallOutputItem
 from openai.types.responses import ResponseTextDeltaEvent
 
+from assistant.ui import show_tool_call, show_tool_result
+
 
 def handle_stream_event(event) -> None:
     """Pretty-print streaming events from the Agents SDK."""
@@ -11,9 +13,7 @@ def handle_stream_event(event) -> None:
         print(event.data.delta, end="", flush=True)
 
     elif event.type == "run_item_stream_event":
-
         if isinstance(event.item, ToolCallItem):
-            print(f"\n🔧 {event.item.raw_item.name}")
-
+            show_tool_call(event.item)
         elif isinstance(event.item, ToolCallOutputItem):
-            print("\n✓ completed\n")
+            show_tool_result()
