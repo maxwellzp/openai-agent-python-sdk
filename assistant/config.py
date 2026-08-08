@@ -6,3 +6,7 @@ WORKSPACE.mkdir(exist_ok=True)
 MODEL = "gpt-5-mini"
 
 PYTHON_TIMEOUT = 10
+
+SESSION_ID = "default"
+
+DATABASE_PATH = "data/conversations.db"
