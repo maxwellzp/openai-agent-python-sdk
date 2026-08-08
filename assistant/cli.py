@@ -1,6 +1,7 @@
+from agents import Runner
+
 from assistant.agent import create_agent
 from assistant.session import create_session
-from agents import Runner
 from assistant.streaming import handle_stream_event
 
 
